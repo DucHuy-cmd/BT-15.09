@@ -1,0 +1,103 @@
+:root{
+    --sky:#3f7fd1;
+    --sky-dark:#1f4f8a;
+    --orange:#f0954a;
+    --bg:#e8f1fb;
+    --ink:#1f2b38;
+    --muted:#63707d;
+    --line:#dde6f1;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    font-family:'Segoe UI',Roboto,Arial,sans-serif;
+    background:linear-gradient(180deg,var(--sky) 0%,var(--bg) 260px);
+    color:var(--ink);
+    padding:26px 16px 40px;
+  }
+  header{text-align:center;margin-bottom:20px;}
+  header h1{
+    display:inline-block;
+    margin:0;
+    color:#fff;
+    font-size:1.6rem;
+    font-style:italic;
+    letter-spacing:.5px;
+  }
+  main{max-width:680px;margin:0 auto;}
+  main > section{
+    background:#fff;
+    border-radius:14px;
+    padding:30px 34px 26px;
+    box-shadow:0 10px 30px rgba(31,79,138,.15);
+  }
+  main > section h2{
+    text-align:center;
+    margin-top:0;
+    color:var(--sky-dark);
+    font-size:1.2rem;
+  }
+  fieldset{
+    border:1px solid var(--line);
+    border-radius:8px;
+    padding:16px 18px 18px;
+    margin-bottom:16px;
+  }
+  legend{
+    padding:0 8px;
+    color:var(--sky-dark);
+    font-weight:700;
+    font-size:.92rem;
+  }
+  label{
+    display:block;
+    font-size:.82rem;
+    color:var(--muted);
+    margin:10px 0 4px;
+  }
+  .row{display:flex;gap:14px;flex-wrap:wrap;}
+  .row > div{flex:1;min-width:180px;}
+  input[type=text], input[type=date], input[type=number], select{
+    width:100%;
+    padding:9px 11px;
+    border:1px solid var(--line);
+    border-radius:6px;
+    font-size:.88rem;
+    background:#fafcff;
+  }
+  input:focus, select:focus{outline:2px solid var(--sky);outline-offset:1px;}
+  output{
+    display:block;
+    text-align:center;
+    font-size:1.3rem;
+    font-weight:700;
+    color:var(--sky-dark);
+    background:#eaf2fc;
+    border-radius:8px;
+    padding:12px;
+    margin-top:6px;
+  }
+  .security-box{
+    display:flex;
+    gap:10px;
+    align-items:flex-start;
+    background:#fff7ec;
+    border:1px solid #fadfb8;
+    border-radius:8px;
+    padding:12px 14px;
+    font-size:.82rem;
+    color:var(--muted);
+  }
+  .security-box span.icon{font-size:1.1rem;}
+  keygen, .actions{display:block;text-align:center;margin-top:20px;}
+  button[type=submit]{
+    background:var(--orange);
+    color:#fff;
+    border:none;
+    padding:13px 34px;
+    border-radius:999px;
+    font-size:.95rem;
+    font-weight:700;
+    cursor:pointer;
+    box-shadow:0 6px 16px rgba(240,149,74,.4);
+  }

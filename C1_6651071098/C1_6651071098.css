@@ -1,0 +1,124 @@
+:root{
+    --teal-dark:#0f3d3e;
+    --teal:#1f6f6b;
+    --orange:#e8935a;
+    --cream:#f7f3ec;
+    --ink:#22302f;
+    --muted:#5b6b69;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    font-family:'Segoe UI', Roboto, Arial, sans-serif;
+    background:var(--cream);
+    color:var(--ink);
+  }
+  header{
+    position:relative;
+    overflow:hidden;
+    background:linear-gradient(120deg,var(--teal-dark) 0%,var(--teal) 55%,var(--orange) 130%);
+    color:#fff;
+    padding:36px 48px 90px;
+  }
+  header::before{
+    content:"";
+    position:absolute;
+    right:-60px;top:-60px;
+    width:260px;height:260px;
+    background:rgba(255,255,255,.08);
+    border-radius:50%;
+  }
+  header hgroup h1{
+    margin:0;
+    font-size:2.1rem;
+    letter-spacing:.5px;
+  }
+  header hgroup h2{
+    margin:6px 0 0;
+    font-weight:400;
+    font-size:1rem;
+    color:#dfeceb;
+  }
+  .avatar{
+    position:absolute;
+    right:48px; top:28px;
+    width:70px;height:70px;
+    border-radius:50%;
+    background:#ffe1c2;
+    border:3px solid rgba(255,255,255,.6);
+  }
+  nav{
+    margin:-46px 48px 0;
+    position:relative;
+    z-index:2;
+    display:flex;
+    gap:10px;
+  }
+  nav a{
+    background:#fff;
+    color:var(--teal-dark);
+    text-decoration:none;
+    padding:10px 22px;
+    border-radius:999px;
+    font-size:.9rem;
+    font-weight:600;
+    box-shadow:0 6px 14px rgba(0,0,0,.12);
+  }
+  nav a:first-child{
+    background:var(--orange);
+    color:#fff;
+  }
+  main{
+    max-width:1000px;
+    margin:0 auto;
+    padding:56px 48px 40px;
+    display:grid;
+    grid-template-columns:1.3fr 1fr 1fr;
+    gap:28px;
+  }
+  section h2{
+    margin-top:0;
+    font-size:1.05rem;
+    color:var(--teal-dark);
+    border-bottom:2px solid var(--orange);
+    display:inline-block;
+    padding-bottom:4px;
+  }
+  section p{
+    color:var(--muted);
+    line-height:1.6;
+    font-size:.92rem;
+  }
+  #kynang ul{
+    list-style:none;
+    margin:0; padding:0;
+  }
+  #kynang li{
+    padding:6px 0 6px 26px;
+    position:relative;
+    font-size:.92rem;
+    color:var(--ink);
+  }
+  #kynang li::before{
+    content:"✓";
+    position:absolute; left:0;
+    color:var(--teal);
+    font-weight:700;
+  }
+  #lienhe address{
+    font-style:normal;
+    font-size:.92rem;
+    color:var(--ink);
+    line-height:1.9;
+  }
+  footer{
+    background:#cfe3e2;
+    text-align:center;
+    padding:16px;
+    font-size:.8rem;
+    color:var(--teal-dark);
+  }
+  @media (max-width:760px){
+    main{grid-template-columns:1fr;}
+    .avatar{display:none;}
+  }

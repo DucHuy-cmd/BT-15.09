@@ -1,0 +1,108 @@
+:root{
+    --blue:#2f6fa8;
+    --blue-dark:#1c4a72;
+    --bg:#eef2f6;
+    --ink:#23303c;
+    --muted:#657280;
+    --line:#dde4ea;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    font-family:'Segoe UI',Roboto,Arial,sans-serif;
+    background:var(--bg);
+    color:var(--ink);
+    padding:30px 16px;
+  }
+  header{text-align:center;margin-bottom:20px;}
+  header h1{
+    display:inline-block;
+    margin:0;
+    color:#fff;
+    background:var(--blue-dark);
+    padding:12px 30px;
+    border-radius:8px;
+    font-size:1.25rem;
+  }
+  main{max-width:640px;margin:0 auto;}
+  main > section{
+    background:#fff;
+    border-radius:12px;
+    padding:30px 34px;
+    box-shadow:0 6px 22px rgba(28,74,114,.08);
+  }
+  fieldset{
+    border:1px solid var(--line);
+    border-radius:8px;
+    padding:16px 18px 18px;
+    margin-bottom:18px;
+  }
+  legend{
+    padding:0 8px;
+    color:var(--blue-dark);
+    font-weight:700;
+    font-size:.92rem;
+  }
+  label{
+    display:block;
+    font-size:.82rem;
+    color:var(--muted);
+    margin:10px 0 4px;
+  }
+  input[type=text],
+  input[type=email],
+  input[type=password],
+  input[type=tel],
+  input[type=url],
+  input[type=number],
+  input[type=date],
+  input[type=search]{
+    width:100%;
+    padding:9px 11px;
+    border:1px solid var(--line);
+    border-radius:6px;
+    font-size:.9rem;
+    background:#fafbfc;
+  }
+  input:focus{outline:2px solid var(--blue);outline-offset:1px;}
+  input[type=range]{width:100%;accent-color:var(--blue);}
+  input[type=color]{
+    width:60px;height:32px;
+    border:1px solid var(--line);
+    border-radius:6px;
+    padding:2px;
+  }
+  .radio-row, .checkbox-row{
+    display:flex;
+    gap:18px;
+    align-items:center;
+    margin-top:6px;
+    flex-wrap:wrap;
+  }
+  .radio-row label, .checkbox-row label{
+    display:inline;
+    margin:0;
+    color:var(--ink);
+    font-size:.88rem;
+  }
+  input[type=radio], input[type=checkbox]{accent-color:var(--blue);}
+  input[type=file]{
+    width:100%;
+    font-size:.85rem;
+    padding:6px 0;
+  }
+  .actions{
+    text-align:center;
+    margin-top:8px;
+  }
+  input[type=submit], input[type=reset]{
+    border:none;
+    padding:11px 28px;
+    border-radius:999px;
+    font-size:.9rem;
+    font-weight:600;
+    cursor:pointer;
+    margin:0 6px;
+  }
+  input[type=submit]{background:var(--blue);color:#fff;}
+  input[type=reset]{background:#e7ebef;color:var(--ink);}

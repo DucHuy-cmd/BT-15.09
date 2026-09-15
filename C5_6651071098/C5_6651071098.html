@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ShopVN - Đăng ký tài khoản</title>
+<link rel="stylesheet" href="C5_6651071098.css">
+</head>
+<body>
+    <header>
+        <h1>Đăng ký tài khoản mới</h1>
+    </header>
+
+    <main>
+        <section>
+            <form action="xu_ly_dangky.php" method="POST" enctype="multipart/form-data" name="formDangKy" id="formDangKy">
+
+                <fieldset>
+                    <legend>Thông tin cơ bản</legend>
+
+                    <label for="hoten">Họ và tên</label>
+                    <input type="text" name="hoten" id="hoten" placeholder="Nguyễn Văn An" required maxlength="100">
+
+                    <label for="email">Email</label>
+                    <input type="email" name="email" id="email" placeholder="example@gmail.com" required>
+
+                    <label for="matkhau">Mật khẩu</label>
+                    <input type="password" name="matkhau" id="matkhau" minlength="8" required>
+
+                    <label for="sdt">Số điện thoại</label>
+                    <input type="tel" name="sdt" id="sdt" pattern="[0-9]{10}" placeholder="0901234567">
+                </fieldset>
+
+                <fieldset>
+                    <legend>Thông tin cá nhân</legend>
+
+                    <label for="tuoi">Tuổi</label>
+                    <input type="number" name="tuoi" id="tuoi" min="16" max="99" step="1" value="18">
+
+                    <label for="ngaysinh">Ngày sinh</label>
+                    <input type="date" name="ngaysinh" id="ngaysinh" min="1950-01-01" max="2010-12-31">
+
+                    <label>Giới tính</label>
+                    <div class="radio-row">
+                        <span><input type="radio" name="gioitinh" id="gioitinh_nam" value="nam"> <label for="gioitinh_nam">Nam</label></span>
+                        <span><input type="radio" name="gioitinh" id="gioitinh_nu" value="nu"> <label for="gioitinh_nu">Nữ</label></span>
+                        <span><input type="radio" name="gioitinh" id="gioitinh_khac" value="khac"> <label for="gioitinh_khac">Khác</label></span>
+                    </div>
+
+                    <label for="mauua">Màu yêu thích</label>
+                    <input type="color" name="mauua" id="mauua" value="#FF6B6B">
+                </fieldset>
+
+                <fieldset>
+                    <legend>Sở thích & Cài đặt</legend>
+
+                    <label for="soikim">Tìm kiếm sở thích</label>
+                    <input type="search" name="soikim" id="soikim" placeholder="Ví dụ: đọc sách, chơi game...">
+
+                    <label for="chitieu">Mức chi tiêu/tháng (VNĐ)</label>
+                    <input type="range" name="chitieu" id="chitieu" min="0" max="50000000" step="500000" value="5000000">
+
+                    <label>Sở thích (chọn nhiều)</label>
+                    <div class="checkbox-row">
+                        <span><input type="checkbox" name="st_docsinh" id="st_docsinh" value="doc"> <label for="st_docsinh">Đọc sách</label></span>
+                        <span><input type="checkbox" name="st_game" id="st_game" value="game"> <label for="st_game">Chơi game</label></span>
+                        <span><input type="checkbox" name="st_du_lich" id="st_du_lich" value="dulich"> <label for="st_du_lich">Du lịch</label></span>
+                    </div>
+
+                    <label for="website">Website cá nhân</label>
+                    <input type="url" name="website" id="website" placeholder="https://example.com">
+
+                    <label for="avatar">Ảnh đại diện</label>
+                    <input type="file" name="avatar" id="avatar" accept="image/png, image/jpeg">
+                </fieldset>
+
+                <div class="actions">
+                    <input type="submit" value="Đăng ký ngay">
+                    <input type="reset" value="Nhập lại">
+                </div>
+            </form>
+        </section>
+    </main>
+</body>
+</html>

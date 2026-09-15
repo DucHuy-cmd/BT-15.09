@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang Giới Thiệu Sinh Viên CNTT</title>
+    <!-- Thư viện FontAwesome cho các biểu tượng icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Đặt lại các thuộc tính mặc định */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #eef5fb; /* Màu nền xanh nhạt của trang */
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1000px;
+            margin-top: 40px;
+            margin-bottom: 40px;
+        }
+
+        /* --- PHẦN HEADER (BANNER & AVATAR) --- */
+        .profile-header {
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            margin-bottom: 40px;
+            position: relative;
+        }
+
+        .header-content {
+            /* Giả lập màu nền lượn sóng bằng gradient */
+            background: linear-gradient(135deg, #1d828a 30%, #f69d3c 65%, #ffd257 100%);
+            padding: 40px 50px 60px;
+            border-top-left-radius: 15px;
+            border-top-right-radius: 15px;
+            color: white;
+            position: relative;
+        }
+
+        .header-info h1 {
+            font-size: 26px;
+            font-weight: bold;
+            margin-bottom: 5px;
+            letter-spacing: 0.5px;
+        }
+
+        .header-info p {
+            font-size: 14px;
+            opacity: 0.9;
+        }
+
+        .header-avatar {
+            position: absolute;
+            right: 80px;
+            bottom: -30px; /* Đẩy avatar nằm đè lên ranh giới */
+            width: 130px;
+            height: 130px;
+            border-radius: 50%;
+            background-color: #6a8caf;
+            border: 5px solid white;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            overflow: hidden;
+        }
+
+        .header-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* --- PHẦN MENU TABS --- */
+        .nav-tabs {
+            display: flex;
+            padding: 15px 50px;
+            gap: 15px;
+            background-color: white;
+            border-bottom-left-radius: 15px;
+            border-bottom-right-radius: 15px;
+        }
+
+        .tab {
+            border: none;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-weight: 600;
+            cursor: pointer;
+            font-size: 12px;
+            transition: 0.3s;
+        }
+
+        /* Màu sắc cho từng tab giống ảnh */
+        .tab-intro { 
+            background-color: #d0ebe9; 
+            color: #1a7872; 
+            border-bottom: 3px solid #1a7872; 
+        }
+        .tab-skills { 
+            background-color: #fbe3d6; 
+            color: #c95c27; 
+        }
+        .tab-contact { 
+            background-color: #e5dff1; 
+            color: #725796; 
+        }
+
+        /* --- PHẦN NỘI DUNG CHÍNH (3 CỘT) --- */
+        .content-sections {
+            display: flex;
+            gap: 30px;
+            align-items: flex-start;
+            flex-wrap: wrap; /* Cho phép rớt dòng trên màn hình nhỏ */
+        }
+
+        .column {
+            flex: 1;
+            min-width: 250px; /* Chiều rộng tối thiểu cho responsive */
+        }
+
+        .column h2 {
+            font-size: 18px;
+            margin-bottom: 15px;
+            color: #333;
+        }
+
+        .card-body {
+            background-color: white;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+            font-size: 13.5px;
+            line-height: 1.6;
+            color: #555;
+        }
+
+        /* Cột 1: Giới thiệu */
+        .intro-card p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+
+        /* Cột 2: Kỹ năng */
+        .skill-list {
+            list-style: none;
+        }
+
+        .skill-list li {
+            margin-bottom: 15px;
+            font-size: 13.5px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: #444;
+        }
+
+        .skill-list li i {
+            color: #1a9ba2; /* Icon check màu xanh */
+            font-size: 16px;
+        }
+
+        /* Cột 3: Liên hệ */
+        .contact-card .card-body {
+            padding: 20px;
+        }
+        
+        .contact-card h3 {
+            font-size: 14px;
+            color: #333;
+            margin-bottom: 15px;
+        }
+
+        .contact-info p {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 13px;
+        }
+
+        .contact-info i {
+            color: #1a9ba2;
+            font-size: 14px;
+            width: 16px; /* Căn chỉnh icon cho đều */
+        }
+
+        /* --- PHẦN FOOTER --- */
+        footer {
+            width: 100%;
+            background-color: #a7cdeb;
+            text-align: center;
+            padding: 20px;
+            margin-top: auto;
+            font-size: 12px;
+            color: #444;
+        }
+
+        footer p {
+            margin-bottom: 5px;
+        }
+
+        footer i {
+            color: #1a7872;
+            margin-right: 5px;
+        }
+
+        /* --- RESPONSIVE CHO ĐIỆN THOẠI --- */
+        @media (max-width: 768px) {
+            .header-content {
+                text-align: center;
+            }
+            .header-avatar {
+                position: relative;
+                right: auto;
+                bottom: auto;
+                margin: 20px auto -80px; /* Kéo avatar xuống giữa header & nav */
+            }
+            .nav-tabs {
+                justify-content: center;
+                padding-top: 60px; /* Chừa chỗ cho avatar */
+            }
+            .content-sections {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- HEADER -->
+        <header class="profile-header">
+            <div class="header-content">
+                <div class="header-info">
+                    <h1>HỌ VÀ TÊN SINH VIÊN</h1>
+                    <p>Sinh viên CNTT - Lớp: CNTT-01</p>
+                </div>
+                <!-- Vị trí để ảnh đại diện -->
+                <div class="header-avatar">
+                    <img src="https://avatar.iran.liara.run/public/boy" alt="Avatar Sinh Viên">
+                </div>
+            </div>
+            
+            <div class="nav-tabs">
+                <button class="tab tab-intro">GIỚI THIỆU</button>
+                <button class="tab tab-skills">KỸ NĂNG</button>
+                <button class="tab tab-contact">LIÊN HỆ</button>
+            </div>
+        </header>
+
+        <!-- NỘI DUNG CHÍNH -->
+        <main class="content-sections">
+            
+            <!-- Cột 1: Giới thiệu -->
+            <section class="column intro-card">
+                <h2>Giới thiệu</h2>
+                <div class="card-body">
+                    <p>I am a passion for mintion o IT [HỌ TÊN SINH VIÊN], hiện từ năm hai, sử dụng của huẩn tàn trì công nghệ với và phát triển sử web sith.</p>
+                    <p>Làm điệc mục lắc cho coding viên và hàng thành học diện của Lập trình, tằm frontend, trình kỹ năng triết học trong trong khóa tước hiện động.</p>
+                </div>
+            </section>
+
+            <!-- Cột 2: Kỹ năng -->
+            <section class="column skills-card">
+                <h2>Kỹ năng</h2>
+                <ul class="skill-list">
+                    <li><i class="fa-solid fa-circle-check"></i> Thiết kế Web (HTML5, CSS3, JS)</li>
+                    <li><i class="fa-solid fa-circle-check"></i> Lập trình Backend cơ bản</li>
+                    <li><i class="fa-solid fa-circle-check"></i> Sử dụng Git & GitHub</li>
+                    <li><i class="fa-solid fa-circle-check"></i> Thiết kế Responsive</li>
+                </ul>
+            </section>
+
+            <!-- Cột 3: Liên hệ -->
+            <section class="column contact-card">
+                <h2>Liên hệ</h2>
+                <div class="card-body">
+                    <h3>Address</h3>
+                    <div class="contact-info">
+                        <p><i class="fa-solid fa-envelope"></i> email@sv.edu.vn</p>
+                        <p><i class="fa-solid fa-phone"></i> 0901-234-567</p>
+                    </div>
+                </div>
+            </section>
+            
+        </main>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>&copy; 2024 – [HỌ TÊN SINH VIÊN]. All rights reserved.</p>
+        <p><i class="fa-solid fa-graduation-cap"></i> Học Viện Công Nghệ</p>
+    </footer>
+
+</body>
+</html>
